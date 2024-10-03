@@ -1,12 +1,10 @@
-xport default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
+export default function taskBlock(trueOrFalse) {
+  let task = false;
+  let task2 = true;
 
   if (trueOrFalse) {
-    // eslint-disable-next-line no-unused-vars, no-shadow
-    const task = true;
-    // eslint-disable-next-line no-unused-vars, no-shadow
-    const task2 = false;
+    let task = true;  // block-scoped within 'if'
+    let task2 = false; // block-scoped within 'if'
   }
 
   return [task, task2];
